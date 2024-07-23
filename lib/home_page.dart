@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/cart_page.dart';
 import 'package:my_app/intro_page.dart';
 import 'package:my_app/models/grocery_item.dart';
+import 'package:my_app/models/grocery_tile.dart';
 
 class HomePage extends StatelessWidget {
   final List<Grocery> groceryItems = [
@@ -74,19 +75,19 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            // Expanded(
+            Expanded(
               
-            //   child: GridView.builder(
-            //   padding: EdgeInsets.all(12),
-            //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-            //           childAspectRatio: 1 / 1.3,
-            //           ),
-            //           itemCount: groceryItems.length,
-            //   itemBuilder: (context, index) {
-            //     return GroceryTile(grocery: groceryItems[index]);
-            //   },
-            //   )
-            //   ),
+              child: GridView.builder(
+              padding: EdgeInsets.all(12),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                      childAspectRatio: 1 / 1.3,
+                      ),
+                      itemCount: groceryItems.length,
+              itemBuilder: (context, index) {
+                return GroceryTile(grocery: groceryItems[index]);
+              },
+              )
+              ),
         ],
         ),
         )
